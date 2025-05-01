@@ -14,6 +14,12 @@ public class CameraController: MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
+
+        //예외처리
+        if (player == null)
+        {
+            Debug.Log("Player가 없어!");
+        }
     }
 
     void Update()
