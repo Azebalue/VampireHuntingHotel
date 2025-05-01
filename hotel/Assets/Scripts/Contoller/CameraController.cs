@@ -3,7 +3,7 @@ using UnityEngine;
 public class CameraController: MonoBehaviour
 {
     GameObject player;
-    float cameraPosX;
+    //float cameraPosX;
 
     enum GameObjects
     {
@@ -18,7 +18,7 @@ public class CameraController: MonoBehaviour
 
     void Update()
     {
-        cameraPosX = player.transform.position.x;
-        transform.position = new Vector3 (cameraPosX, 0, -10);
+        //cameraPosX = player.transform.position.x;
+        transform.position = new Vector3 (player.transform.position.x, player.transform.position.y, -10);
     }
 }

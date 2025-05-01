@@ -21,7 +21,7 @@ public class CameraManager
 
     public void Execute()
     {
-        cameraPos = new Vector3(player.transform.position.x, 0, -10);
+        cameraPos = new Vector3(player.transform.position.x, player.transform.position.y, -10);
         camera.transform.position = cameraPos;
     }
 }
