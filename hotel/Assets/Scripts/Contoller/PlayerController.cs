@@ -14,8 +14,8 @@ public class PlayerController : MonoBehaviour
     bool isAttacking = false; //공격 중인지
 
     #region 이동 관련 변수
-    Vector3 D = new Vector3 (1, 1, 0);
-    Vector3 W = new Vector3 (-1, 1, 0);
+    Vector3 D = new Vector3 (1, 0.5f, 0);
+    Vector3 W = new Vector3 (-1, 0.5f, 0);
 
     KeyCode speedUpKey = KeyCode.LeftShift;
     KeyCode speedDownKey = KeyCode.LeftControl;
@@ -61,9 +61,7 @@ public class PlayerController : MonoBehaviour
             rb.velocity = Vector2.zero;
         }
 
-        //AD 중복 입력하는 경우 무효화
-        if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.A))
-            rb.velocity = Vector2.zero;
+
 
 
         //W
@@ -86,8 +84,8 @@ public class PlayerController : MonoBehaviour
             rb.velocity = Vector2.zero;
         }
 
-        //WS 중복 입력하는 경우 무효화
-        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.S))
+        // 중복 입력하는 경우 무효화
+        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.A))
             rb.velocity = Vector2.zero;
     }
 
